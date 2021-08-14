@@ -56,7 +56,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                .loginPage("/landing")
+                .loginPage("/")
                 .failureHandler((request, response, exception) -> {
                     System.out.println("Login failed");
                     System.out.println(exception.toString());

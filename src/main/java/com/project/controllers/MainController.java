@@ -17,7 +17,7 @@ public class MainController implements ErrorController {
     private static final String PATH = "/error";
 
 
-    @GetMapping("/landing")
+    @GetMapping("/")
     public String landing() {
         return "landing";
     }
