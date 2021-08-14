@@ -1,4 +1,4 @@
-package com.dddd.SLDocs.auth.config;
+package com.project.config;
 
 import org.springframework.context.annotation.*;
 import org.springframework.web.servlet.config.annotation.*;
@@ -9,7 +9,7 @@ public class MvcConfig implements WebMvcConfigurer {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
 
-        registry.addViewController("/login").setViewName("login");
+        registry.addViewController("/login").setViewName("index");
 
     }
 

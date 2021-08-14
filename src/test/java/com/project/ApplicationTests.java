@@ -1,4 +1,4 @@
-package com.dddd.SLDocs;
+package com.project;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -6,7 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.io.*;
 
 @SpringBootTest
-class SlDocsApplicationTests {
+class ApplicationTests {
 
 	@Test
 	void writePslStylesTest() throws IOException {

@@ -1,21 +1,16 @@
-package com.dddd.SLDocs.auth.config;
+package com.project.config;
 
-import com.dddd.SLDocs.auth.servImpls.UserDetailsServiceImpl;
+import com.project.servImpls.UserDetailsServiceImpl;
 import org.springframework.context.annotation.*;
 import org.springframework.security.authentication.dao.*;
 import org.springframework.security.config.annotation.authentication.builders.*;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.*;
-import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @Configuration
 @EnableWebSecurity
@@ -39,7 +34,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         return authProvider;
     }
-
+    @Configuration
+    public class WebMvcConfiguration extends WebMvcConfigurerAdapter {
+        @Override
+        public void addResourceHandlers(ResourceHandlerRegistry registry) {
+            registry.addResourceHandler("/video/**").addResourceLocations("src/main/resources/static/video");
+        }
+    }
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.authenticationProvider(authenticationProvider());
@@ -48,14 +49,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/resources/**", "/css/**", "/login_error_disabled", "login_error",
-                        "/login_error_bad_credentials", "/login", "/registration", "/resources/templates/registration.html").permitAll()
-                .antMatchers("/").hasAnyAuthority("USER", "ADMIN")
-                .antMatchers("/**").hasAnyAuthority("ADMIN")
+                .antMatchers("/resources/**","/images/**","/video/**", "/css/**","/scripts/**", "/login_error_disabled", "login_error",
+                        "/login_error_bad_credentials", "/login","/catalog", "/registration", "/resources/templates/registration.html").permitAll()
+                //.antMatchers("/").hasAnyAuthority("USER", "ADMIN")
+               // .antMatchers("/**").hasAnyAuthority("ADMIN")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                .loginPage("/login")
+                .loginPage("/landing")
                 .failureHandler((request, response, exception) -> {
                     System.out.println("Login failed");
                     System.out.println(exception.toString());

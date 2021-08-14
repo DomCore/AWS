@@ -1,4 +1,4 @@
-package com.dddd.SLDocs;
+package com.project;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,10 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.io.IOException;
 
 @SpringBootApplication
-public class SlDocsApplication {
+public class Application {
 
 	public static void main(String[] args) throws IOException {
-		SpringApplication.run(SlDocsApplication.class, args);
+		SpringApplication.run(Application.class, args);
 
 	}
 }
