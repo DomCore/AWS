@@ -15,8 +15,8 @@ body {
   color: #444;
   font-size: 14px;
   font-weight: 300;
-  font-family: Roboto, 'Open Sans', Arial, sans-serif;
-  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+ overflow: hidden;
 }
 
 .section .container {
@@ -45,6 +45,7 @@ body {
   background: #FFFFFF;
 }
 
+
 .header.small {
   line-height: 50px;
   box-shadow: 0px 1px 3px 0px rgba(50, 50, 50, 0.8);
@@ -58,11 +59,9 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: red;
   float: left;
-  height: 40px;
-  width: 170px;
   margin-left: 5px;
+  width: 60px; height: 60px;
 }
 
 ul.nav {
@@ -438,7 +437,7 @@ h2 {
   }
   .header {
     height: auto;
-    background: #eee;
+    background: #FFFFFF;
   }
   #logo {
     position: initial;

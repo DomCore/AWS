@@ -6,21 +6,24 @@
 <head>
     <meta charset="utf-8"/>
     <link rel="stylesheet" th:href="@{/css/style.css}" type="text/css">
+<!--    <link rel="stylesheet" th:href="@{/css/timeline2.css}" type="text/css">-->
+    <link rel="stylesheet" th:href="@{/css/timeline.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{/css/timelineMain.css}" type="text/css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <script th:src="@{/scripts/script.js}"></script>
     <title>ТОВ «ГУТА СКЛА»</title>
 </head>
 <body>
-
 <div class="hold">
     <div class="header">
-        <div class="container" style="background-color: #FFFFFF">
-            <img id="logo" style="width: 60px; height: 60px;" th:src="@{/images/logo.jpg}"/>
+        <div class="container">
+            <img id="logo" th:src="@{/images/logo.png}"/>
             <ul class="nav">
                 <li><a th:href="@{/index}">Головна</a></li>
                 <li><a th:href="@{/catalog}">Каталог</a></li>
-                <li><a href="#">Wow</a></li>
-                <li><a href="#">Wow</a></li>
+                <li><a href="#">Акції</a></li>
+                <li><a href="#">Про компанію</a></li>
+                <li><a href="#">Контакти</a></li>
             </ul>
         </div>
     </div>
@@ -28,126 +31,245 @@
 <div class="section">
     <div class="slider">
         <section class="about">
-        <video poster="" id="video" class="video" playsinline autoplay muted loop>
-                <source src="https://static.videezy.com/system/resources/previews/000/036/968/original/water4.mp4" type="video/mp4">
-        </video>
+            <video poster="" id="video" class="video" playsinline autoplay muted loop>
+                <source src="https://static.videezy.com/system/resources/previews/000/036/968/original/water4.mp4"
+                        type="video/mp4">
+            </video>
             <div class="about-title">
                 <h1 class="hero">ГУТА СКЛА</h1>
-                <h2 class="hero">Український бренд</h2>
-                <div class="call"><span>Wow</span></div>
+                <h2 class="hero">Для тих, хто рухає Україну вперед</h2>
+                <div class="call"><span><a th:href="@{/catalog}">Каталог</a></span></div>
             </div>
         </section>
     </div>
 </div>
-<div class="section">
+<div class="section  bg">
     <div class="container">
-        <div class="col four">
-            <h1 class="icon"><i class="fa fa-cog" style="font-size: 45px" aria-hidden="true"></i></h1>
-            <h1 class="service">Технологія виробництв</h1>
-            <p>Виробництво здійснюється на роботизованому обладнанні, яке забезпечує високу якість товару та швидкість його виготовлення. Виробництво здійснюється на трьох лініях, відповідно до потреби обробки скла.
-            </p>
-        </div>
-        <div class="responsivegroup"></div>
-        <div class="col four">
-            <h1 class="icon"><i class="fa fa-tags" style="font-size: 45px" aria-hidden="true"></i></h1>
-            <h1 class="service">Асортимент продукції</h1>
-            <p>	На даний момент, підприємство виготовляє так зване димчате скло, для забезпечення потреб внутрішнього ринку, в якісному та вітчизняному посуді.
-                Асортимент наповнений різного роду продукцією, що дозволяє бути конкурентоспроможним по відношенню до імпортного посуду Luminarc та Arcoroc.
-            </p>
-        </div>
-        <div class="col four">
-            <h1 class="icon"><i class="fa fa-map-marker" style="font-size: 45px" aria-hidden="true"></i></h1>
-            <h1 class="service">Місцезнаходження</h1>
-            <p>Товариство з обмеженою відповідальністю «ГУТА СКЛА» засноване у формі спільного товариства з іноземним співзасновником 29 липня 2019 року та знаходиться у Львівській області, Стрийському р-ні, с.Ходовичі, вул Привокзальна 10.
-            </p>
-        </div>
-        <div class="col four">
-            <br>
-            <br>
-            <br>
-            <br>
-            <img style="width: 100%; height: auto;" th:src="@{/images/location.png}" alt="Розташування"/>
-        </div>
+        <h1 class="icon"><i class="fa fa-info" style="font-size: 45px" aria-hidden="true"></i></h1>
+        <h1 class="service">Про нас</h1>
+        <p style="font-size: 18px;text-align: center;">Україна славилась своїм скляним виробництвом ще з ХІІ ст, маючи для цього усі ресурси та переваги, але низка подій спричинила його занепад, особливо у виробництві скляного посуду. Та знаєте що? МИ ЦЕ ВИПРАВИМО!</p>
+        <p style="font-size: 18px;text-align: center;">Гута Скла – єдиний на сьогоднішній день виробник скляного посуду в Україні. Підприємство створено на базі раніше існуючого заводу ГУТА за участі іноземної інвестиції з Польщі. Саме таке поєднання української завзятості та сучасних технологій, які стали для нас надбанням з польської сторони, дозволили створити сучасне міжнародне підприємство, що буде вести Україну вперед!
+        </p>
+
+        <!--        <div class="responsivegroup"></div>
+                <div class="col four">
+                    <h1 class="icon"><i class="fa fa-tags" style="font-size: 45px" aria-hidden="true"></i></h1>
+                    <h1 class="service">Асортимент продукції</h1>
+                    <p>	На даний момент, підприємство виготовляє так зване димчате скло, для забезпечення потреб внутрішнього ринку, в якісному та вітчизняному посуді.
+                        Асортимент наповнений різного роду продукцією, що дозволяє бути конкурентоспроможним по відношенню до імпортного посуду Luminarc та Arcoroc.
+                    </p>
+                </div>
+                <div class="col four">
+                    <h1 class="icon"><i class="fa fa-map-marker" style="font-size: 45px" aria-hidden="true"></i></h1>
+                    <h1 class="service">Місцезнаходження</h1>
+                    <p>Товариство з обмеженою відповідальністю «ГУТА СКЛА» засноване у формі спільного товариства з іноземним співзасновником 29 липня 2019 року та знаходиться у Львівській області, Стрийському р-ні, с.Ходовичі, вул Привокзальна 10.
+                    </p>
+                </div>
+                <div class="col four">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <img style="width: 90%; height: auto;" th:src="@{/images/location.png}" alt="Розташування"/>
+                </div>-->
     </div>
 </div>
 
+<div class="section">
+    <div class="container">
+        <section>
+            <div class="container" >
+                <div id="__nuxt">
+                    <div></div>
+                    <div id="__layout">
+                        <div class="__main">
+                            <main class="__nuxt">
+                                <div>
+                                    <div data-v-850d9958="" class="__wrap __wrap-min wrap">
+                                        <div data-v-850d9958="" class="container">
+                                            <div data-v-850d9958="" class="descr-wrap">
+                                                <div data-v-850d9958="" class="__text-animate wrap-min">
+                                                    <div data-v-1295fcea="" data-v-850d9958="" class="rel-wrap">
+                                                        <div data-v-1295fcea="" class="rel">
+                                                            <div data-v-1295fcea="" class="__sup sup">
+                                                            </div>
+                                                            <div data-v-1295fcea="" class="__title title"><span
+                                                                    data-v-1295fcea="" datacomp-text="Процес виробництва"
+                                                                    class="" style="font-size: 50px;margin-right: 20px;">Процес</span><span
+                                                                    data-v-1295fcea="" datacomp-text="Процес виробництва"
+                                                                    class="" style="font-size: 50px;">виробництва</span></div>
+                                                            <i data-v-1295fcea="" class="__title line"
+                                                               style="background-color: rgb(30, 172, 255);"></i> <!----></div>
+                                                        <!----> <!----> <!---->
+                                                        <div data-v-1295fcea="" class="__above-button"></div> <!----> <!---->
+                                                    </div>
+                                                    <div data-v-850d9958="" class="list-wrap">
+                                                        <ul data-v-850d9958="" class="list"><span data-v-850d9958=""
+                                                                                                  class="progress"
+                                                                                                  style="width: 7%; height: 7%; background-color: rgb(30, 172, 255);"></span>
+                                                            <span data-v-850d9958="" class="progress progress--bg"></span>
+                                                            <li data-v-850d9958="" class="item active"><!----> <span
+                                                                    data-v-850d9958="" to="/undefined" class="link"><span
+                                                                    data-v-850d9958="" class="index"><i class="fa fa-cubes"></i></span> <svg
+                                                                    data-v-850d9958="" viewBox="-3 -3 176 176" fill="#1EACFF"
+                                                                    xmlns="http://www.w3.org/2000/svg" stroke="#1EACFF"
+                                                                    class="circle"><path data-v-850d9958=""
+                                                                                         d="M169.866 92.905c5.601-19.615 0-40.63-14.703-54.842a148.204 148.204 0 00-28.906-21.817c-10.401-6.004-21.604-10.708-33.406-14.11-19.603-5.605-40.607 0-54.81 14.71C20.938 34.462 8.836 55.477 2.134 79.096c-5.6 19.615 0 40.631 14.703 54.842a148.183 148.183 0 0028.905 21.816c10.403 6.005 21.605 10.709 33.407 14.111 19.603 5.605 40.707 0 54.81-14.711 17.003-17.613 29.105-38.63 35.907-62.248z"></path></svg></span>
+                                                                <div data-v-850d9958="" class="link-title" style="font-size:20px;">Якісна сировина</div>
+                                                                <div data-v-850d9958="" class="link-intro">Що як не високоякісні матеріали забезпечать гарантію безпечності та відмінності нашої продукції.
+                                                                    Ми використовуємо матеріали українських виробників для підтримки државної економіки.
+                                                                </div>
+                                                            </li>
+                                                            <li data-v-850d9958="" class="item"><!----> <span data-v-850d9958=""
+                                                                                                              to="/undefined"
+                                                                                                              class="link"><span
+                                                                    data-v-850d9958="" class="index"><i class="fa fa-cogs"></i></span> <svg
+                                                                    data-v-850d9958="" viewBox="-3 -3 176 176" fill="#1EACFF"
+                                                                    xmlns="http://www.w3.org/2000/svg" stroke="#1EACFF"
+                                                                    class="circle"><path data-v-850d9958=""
+                                                                                         d="M169.866 92.905c5.601-19.615 0-40.63-14.703-54.842a148.204 148.204 0 00-28.906-21.817c-10.401-6.004-21.604-10.708-33.406-14.11-19.603-5.605-40.607 0-54.81 14.71C20.938 34.462 8.836 55.477 2.134 79.096c-5.6 19.615 0 40.631 14.703 54.842a148.183 148.183 0 0028.905 21.816c10.403 6.005 21.605 10.709 33.407 14.111 19.603 5.605 40.707 0 54.81-14.711 17.003-17.613 29.105-38.63 35.907-62.248z"></path></svg></span>
+                                                                <div data-v-850d9958="" class="link-title" style="font-size:20px;">Високотехнологічне виробництво
+                                                                </div>
+                                                                <div data-v-850d9958="" class="link-intro">Роботизоване обладння, надбане нами з Польщі, гарантує швидкість та високий ступінь виробництва.
+                                                                </div>
+                                                            </li>
+                                                            <li data-v-850d9958="" class="item"><!----> <span data-v-850d9958=""
+                                                                                                              to="/undefined"
+                                                                                                              class="link"><span
+                                                                    data-v-850d9958="" class="index"><i class="fa fa-eye"></i></span> <svg
+                                                                    data-v-850d9958="" viewBox="-3 -3 176 176" fill="#1EACFF"
+                                                                    xmlns="http://www.w3.org/2000/svg" stroke="#1EACFF"
+                                                                    class="circle"><path data-v-850d9958=""
+                                                                                         d="M169.866 92.905c5.601-19.615 0-40.63-14.703-54.842a148.204 148.204 0 00-28.906-21.817c-10.401-6.004-21.604-10.708-33.406-14.11-19.603-5.605-40.607 0-54.81 14.71C20.938 34.462 8.836 55.477 2.134 79.096c-5.6 19.615 0 40.631 14.703 54.842a148.183 148.183 0 0028.905 21.816c10.403 6.005 21.605 10.709 33.407 14.111 19.603 5.605 40.707 0 54.81-14.711 17.003-17.613 29.105-38.63 35.907-62.248z"></path></svg></span>
+                                                                <div data-v-850d9958="" class="link-title" style="font-size:20px;">Контроль якості</div>
+                                                                <div data-v-850d9958="" class="link-intro">У нашій команді працюють тільки відповідальні та кваліфіковані люди, для того щоб наші клієнти відчували впевненість стосовно якості та безпечності нашої продукції.
+                                                                </div>
+                                                            </li>
+                                                            <li data-v-850d9958="" class="item">
+                                                                <svg data-v-850d9958="" width="760" height="760"
+                                                                     viewBox="0 0 760 760" fill="none"
+                                                                     xmlns="http://www.w3.org/2000/svg" class="pie">
+                                                                    <path data-v-850d9958="" opacity=".4"
+                                                                          d="M747.407 421.627c27.328-85.485 5.586-178.56-57.248-242.674-37.5-38.548-79.389-72.102-124.07-99.665-44.682-27.963-93.353-50.133-144.616-66.71C336.099-14.785 243.146 7.185 178.717 69.7c-77.195 75.498-133.246 165.776-166.16 268.638-27.327 85.485-5.385 178.559 57.249 242.873 37.5 38.548 79.389 72.102 124.071 99.665 44.681 27.763 93.352 50.133 144.616 66.511 85.573 27.363 178.526 5.592 242.755-57.123 77.195-75.499 133.047-165.777 166.159-268.638zM473.534 580.013c-23.338 22.769-57.248 30.759-88.166 20.772-78.99-25.366-147.408-67.709-205.454-127.029-22.74-23.368-30.719-57.123-20.745-88.081 25.333-79.093 67.62-147.401 127.062-205.323 23.339-22.77 57.249-30.759 88.166-20.772 78.991 25.365 147.409 67.708 205.455 127.028 22.74 23.369 30.719 57.123 20.745 88.082-25.333 78.893-67.62 147.401-127.063 205.323z"
+                                                                          stroke="#fff" stroke-miterlimit="10"></path>
+                                                                </svg>
+                                                                <span data-v-850d9958="" to="/undefined" class="link"><span
+                                                                        data-v-850d9958="" class="index">4</span> <svg
+                                                                        data-v-850d9958="" viewBox="-3 -3 176 176"
+                                                                        fill="#1EACFF" xmlns="http://www.w3.org/2000/svg"
+                                                                        stroke="#1EACFF" class="circle"><path data-v-850d9958=""
+                                                                                                              d="M169.866 92.905c5.601-19.615 0-40.63-14.703-54.842a148.204 148.204 0 00-28.906-21.817c-10.401-6.004-21.604-10.708-33.406-14.11-19.603-5.605-40.607 0-54.81 14.71C20.938 34.462 8.836 55.477 2.134 79.096c-5.6 19.615 0 40.631 14.703 54.842a148.183 148.183 0 0028.905 21.816c10.403 6.005 21.605 10.709 33.407 14.111 19.603 5.605 40.707 0 54.81-14.711 17.003-17.613 29.105-38.63 35.907-62.248z"></path></svg></span>
+                                                                <div data-v-850d9958="" class="link-title">ОТРИМАЙ РОБОТУ</div>
+                                                                <div data-v-850d9958="" class="link-intro">Впродовж 10 днів ми
+                                                                    повідомимо тобі про результати співбесіди. Віримо, що у тебе
+                                                                    все вийде!
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </main>
+                        </div>
+                    </div>
+                </div>
+                <!--&lt;!&ndash;1&ndash;&gt;
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="main-timeline">
+                            <div class="timeline">
+                                <a class="timeline-content">
+                                    <div class="timeline-icon"><i class="fa fa-cubes"></i></div>
+                                    <div class="timeline-step"><span>step</span>01</div>
+                                    <h3 class="title">Якісна сировина</h3>
+                                    <p class="description">
+                                        Що як не високоякісні матеріали забезпечать гарантію безпечності та відмінності нашої продукції.
+                                        Ми використовуємо матеріали українських виробників для підтримки државної економіки!
+                                    </p>
+                                </a>
+                            </div>
+                            <div class="timeline">
+                                <a class="timeline-content" >
+                                    <div class="timeline-icon"><i class="fa fa-cogs"></i></div>
+                                    <div class="timeline-step"><span>step</span>02</div>
+                                    <h3 class="title">Високотехнологічне виробництво</h3>
+                                    <p class="description">
+                                        Роботизоване обладння, надбане нами з Польщі, гарантує швидкість та високий ступінь виробництва
+                                    </p>
+                                </a>
+                            </div>
+                            <div class="timeline" >
+                                <a class="timeline-content">
+                                    <div class="timeline-icon"><i class="fa fa-eye"></i></div>
+                                    <div class="timeline-step"><span>step</span>03</div>
+                                    <h3 class="title">Контроль якості </h3>
+                                    <p class="description">
+                                        У нашій команді працюють тільки відповідальні та кваліфіковані люди, для того щоб наші клієнти відчували впевненість стосовно якості та безпечності нашої продукції.
+                                    </p>
+                                </a>
+                            </div>
+                            <div class="timeline">
+                                <a class="timeline-content">
+                                    <div class="timeline-icon"><i class="fa fa-rocket"></i></div>
+                                    <div class="timeline-step"><span>step</span>04</div>
+                                    <h3 class="title">Web Development</h3>
+                                    <p class="description">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer males uada tellus lorem, et condimentum neque commodo Integer males uada tellus lorem, et condimentum neque commodo
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+-->
+
+
+
+
+            </div>
+        </section>
+
+    </div>
+</div>
+<!--<div class="section">
+    <div class="container" style="background-repeat: no-repeat; width:100%; background-image: url(https://eraglass.com/wp-content/uploads/2020/03/kompozitsii-iz-stekla.jpg)">
+        <div class="group margin"></div>
+    </div>
+</div>-->
 <div class="section bg">
     <div class="container">
-        <h1>Wow wow</h1>
-        <h2>Wow wow wow!</h2>
-        <div class="col three bg nopad pointer">
-            <div class="imgholder"><img style="width: 80%; height: auto;" th:src="@{/images/img.png}"/></div>
-            <h1 class="feature">Тип 1</h1>
-            <p>Wow wow</p>
-        </div>
-        <div class="col three bg nopad pointer">
-            <div class="imgholder"><img style="width: 80%; height: auto;" th:src="@{/images/img_1.png}"/></div>
-            <h1 class="feature">Тип 2</h1>
-            <p>Wow wow wow</p>
-        </div>
-        <div class="col three bg nopad pointer">
-            <div class="imgholder"><img style="width: 80%; height: auto;" th:src="@{/images/img_2.png}"/></div>
-            <h1 class="feature">Тип 3</h1>
-            <p>Wow wow wow</p>
-        </div>
-        <div class="group margin"></div>
-        <div class="col three bg nopad pointer">
-            <div class="imgholder"><img style="width: 80%; height: auto;" th:src="@{/images/img_7.png}"/></div>
-            <h1 class="feature">Тип 4</h1>
-            <p>Wow wow</p>
-        </div>
-        <div class="col three bg nopad pointer">
-            <div class="imgholder"><img style="width: 80%; height: auto;" th:src="@{/images/img_8.png}"/></div>
-            <h1 class="feature">Тип 5</h1>
-            <p>Wow wow wow</p>
-        </div>
-        <div class="col three bg nopad pointer">
-            <div class="imgholder"><img style="width: 80%; height: auto;" th:src="@{/images/img_9.png}"/></div>
-            <h1 class="feature">Тип 6</h1>
-            <p>Wow wow wow</p>
-        </div>
-        <div class="group"></div>
+        <h1 class="icon"><i class="fa fa-map-marker" style="font-size: 45px" aria-hidden="true"></i></h1>
+        <h1 class="service">Місцезнаходження</h1>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2602.182812699137!2d23.96172051557137!3d49.29187997933234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473a68c248d32cbf%3A0xf89c65bf1aaf2a00!2z0LLRg9C70LjRhtGPINCf0YDQuNCy0L7QutC30LDQu9GM0L3QsCwgMTAsINCb0YzQstGW0LLRgdGM0LrQsCDQvtCx0LvQsNGB0YLRjA!5e0!3m2!1sru!2sua!4v1629102649691!5m2!1sru!2sua"
+                style="border:0;border-radius:5px; width: 100%;height: 650px;" allowfullscreen=""
+                loading="lazy"></iframe>
+        <!--        <div class="responsivegroup"></div>
+                <div class="col four">
+                    <h1 class="icon"><i class="fa fa-tags" style="font-size: 45px" aria-hidden="true"></i></h1>
+                    <h1 class="service">Асортимент продукції</h1>
+                    <p>	На даний момент, підприємство виготовляє так зване димчате скло, для забезпечення потреб внутрішнього ринку, в якісному та вітчизняному посуді.
+                        Асортимент наповнений різного роду продукцією, що дозволяє бути конкурентоспроможним по відношенню до імпортного посуду Luminarc та Arcoroc.
+                    </p>
+                </div>
+                <div class="col four">
+                    <h1 class="icon"><i class="fa fa-map-marker" style="font-size: 45px" aria-hidden="true"></i></h1>
+                    <h1 class="service">Місцезнаходження</h1>
+                    <p>Товариство з обмеженою відповідальністю «ГУТА СКЛА» засноване у формі спільного товариства з іноземним співзасновником 29 липня 2019 року та знаходиться у Львівській області, Стрийському р-ні, с.Ходовичі, вул Привокзальна 10.
+                    </p>
+                </div>
+                <div class="col four">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <img style="width: 90%; height: auto;" th:src="@{/images/location.png}" alt="Розташування"/>
+                </div>-->
     </div>
 </div>
 <div class="section">
-    <div class="container">
-        <h1>Wow? Wow wow wow wow!</h1>
-        <h2>Wow</h2>
-        <div class="col three">
-            <h1 class="icon side">[]</h1>
-            <h1 class="feature side">Wow</h1>
-            <p class="side">Wow wow wow wow wow wow wow wow wow wow wow wow wow</p>
-        </div>
-        <div class="col three">
-            <h1 class="icon side">[]</h1>
-            <h1 class="feature side">Wow</h1>
-            <p class="side">Wow wow wow wow wow wow wow wow</p>
-        </div>
-        <div class="col three">
-            <h1 class="icon side">[]</h1>
-            <h1 class="feature side">Wow</h1>
-            <p class="side">Wow wow wow wow wow wow wow wow wow wow wow</p>
-        </div>
-        <div class="group margin"></div>
-        <div class="col three">
-            <h1 class="icon side">[]</h1>
-            <h1 class="feature side">Wow</h1>
-            <p class="side">Wow wow wow wow wow wow wow</p>
-        </div>
-        <div class="col three">
-            <h1 class="icon side">[]</h1>
-            <h1 class="feature side">Wow</h1>
-            <p class="side">Wow wow wow wow wow wow wow wow</p>
-        </div>
-        <div class="col three">
-            <h1 class="icon side">[]</h1>
-            <h1 class="feature side">Wow</h1>
-            <p class="side">Wow wow wow wow wow wow wow wow</p>
-        </div>
-        <div class="group margin"></div>
-    </div>
-</div>
-<div class="section bg">
     <div class="container">
         <h1>Wow</h1>
         <h2>Wow wow wow wow</h2>
@@ -159,7 +281,8 @@
         <div class="col two bg margin extrapad">
             <h1 class="icon side">[]</h1>
             <span class="feature side">Wow wow</span><span class="side"> - Wow wow</span>
-            <p class="side">Wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow</p>
+            <p class="side">Wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow
+                wow</p>
         </div>
         <div class="group margin"></div>
         <div class="col two bg margin extrapad">
@@ -180,12 +303,12 @@
         <div class="col two">
             <h1 class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></h1>
             <h1 class="service">Наш E-mail</h1>
-            <p><a href="mailto:Wow@guta.com.ua" style="color: #444444;">Wow@guta.com.ua</a></p>
+            <p><a href="mailto:gutaglass@gmail.com" style="color: #444444;">gutaglass@gmail.com</a></p>
         </div>
         <div class="col two">
             <h1 class="icon"><i class="fa fa-phone-square" aria-hidden="true"></i></h1>
             <h1 class="service" style="color: #444444;">Телефон</h1>
-            <p><a href=”tel:+79998887766” style="color: #444444">+7(999)888-77-66</a></p>
+            <p><a href=”tel:+38098945674” style="color: #444444">+38098945674</a></p>
         </div>
         <div class="group"></div>
     </div>
@@ -195,20 +318,25 @@
         <div class="container white">
             <div class="col four left">
                 <h1>What?</h1>
-                <p>So that's it. This started out as 20 minutes of making fun of modern web dev. Then it turned into a few hours of it.</p>
+                <p>So that's it. This started out as 20 minutes of making fun of modern web dev. Then it turned into a
+                    few hours of it.</p>
                 <p>I hope you've enjoyed looking at every modern website ever.</p>
-                <p>I don't actually hate this style as long as the content is meaningful. In fact, I think this type of design is pretty cool and effective.</p>
+                <p>I don't actually hate this style as long as the content is meaningful. In fact, I think this type of
+                    design is pretty cool and effective.</p>
             </div>
             <div class="col four left">
                 <h1>How?</h1>
-                <p>CSS3 and HTML. JS for header shrinking; optional. Site works perfectly with JS disabled (another gripe of mine with modern web dev).</p>
+                <p>CSS3 and HTML. JS for header shrinking; optional. Site works perfectly with JS disabled (another
+                    gripe of mine with modern web dev).</p>
                 <p>Only external libraries are GFonts.</p>
                 <p>Moderately responsive, should work on anything modern.</p>
             </div>
             <div class="col four left">
                 <h1>Why?</h1>
-                <p>Many popular HTML themes have thousands of lines of HTML, thousands of lines of CSS and several JS plugins on every page amounting to tens of thousands of lines of JavaScript.</p>
-                <p>I fail to see a valid reason for this, particularly the horrendous line counts that are usually due to unused features or badly designed code.</p>
+                <p>Many popular HTML themes have thousands of lines of HTML, thousands of lines of CSS and several JS
+                    plugins on every page amounting to tens of thousands of lines of JavaScript.</p>
+                <p>I fail to see a valid reason for this, particularly the horrendous line counts that are usually due
+                    to unused features or badly designed code.</p>
             </div>
             <div class="col four left">
                 <h1>Who?</h1>
@@ -218,7 +346,107 @@
     </div>
 </div>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script>
     document.getElementById("video").playbackRate = 0.5;
+    // Globals
+    var prefixes         = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+    var $container       = $('.container');
+    var $timeline        = $('.timeline');
+    var $timelineItem    = $('.timeline-item');
+    var $timelineContent = $('.timeline-content');
+    var $dropDown        = $('.dropdown');
+    var $hasHovered      = true;
+    var hideOnExit       = false;
+
+    // mouseenter event handler
+    $timelineItem.on('mouseenter', function(e) {
+
+        var isSelected = $(this).hasClass('selected');
+
+        if ( isSelected === false ) {
+
+            var leftPos = $(this).position().left,
+                left    = leftPos - 88,
+                $that   = $(this);
+
+            $timelineItem.removeClass('selected');
+            $(this).addClass('selected');
+
+            if ( $hasHovered === false ) {
+                // Show Bounce
+
+                // Set Flag
+                $hasHovered = true;
+
+                // Show DD Bounce
+                showBounce(left);
+
+                // Show DD content Bounce
+                showContentBounce($that);
+
+            } else {
+                // Follow
+
+                // Change pos of DD to follow
+                dropDownFollow(left);
+
+                // Hide previous dd content
+                $timelineContent.removeClass('animated fadeIn bounceIn');
+
+                // Show hovered dd content
+                $that.find($timelineContent).addClass('animated fadeIn');
+            }
+        }
+
+    });
+
+    // mouseleave event handler
+    $timeline.on('mouseleave', function(e) {
+
+        if (hideOnExit) {
+
+            //   Set Flag
+            $hasHovered = false;
+
+            // Hide DD
+            hideDropDown();
+
+            // Hide DD content
+            $timelineContent.removeClass('animated fadeIn');
+
+        }
+
+    });
+
+    // Animation end event listener
+    $dropDown.on(prefixes, function(e) {
+
+        if ( e.originalEvent.animationName === 'fadeOut' ) {
+            $dropDown.removeAttr('style');
+        }
+
+    });
+
+    /**
+     * Private functions that do showing/hiding/animating
+     */
+    function showContentBounce(that) {
+        $hasBounced = true;
+        that.find('.timeline-content').addClass('animated bounceIn');
+    }
+
+    function showBounce(pos) {
+        $dropDown.css('left', pos + 'px').removeClass('fadeOut').addClass('animated bounceIn');
+    }
+
+    function dropDownFollow(pos) {
+        $dropDown.css('left', pos + 'px');
+    }
+
+    function hideDropDown() {
+        $timelineItem.removeClass('selected');
+        $dropDown.removeClass('bounceIn').addClass('fadeOut');
+    }
 </script>
 </html>

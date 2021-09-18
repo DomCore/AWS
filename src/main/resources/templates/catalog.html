@@ -6,27 +6,1248 @@
 <head>
     <meta charset="utf-8"/>
     <link rel="stylesheet" th:href="@{/css/style.css}" type="text/css">
-    <link rel="stylesheet" th:href="@{/css/style2.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{/css/categories.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{/css/dropbar.css}" type="text/css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <script th:src="@{/scripts/script.js}"></script>
-    <script th:src="@{/scripts/script2.js}"></script>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+    <script src="https://unpkg.com/vue-material@beta"></script>
     <title>ТОВ «ГУТА СКЛА»</title>
 </head>
 <body>
-
 <div class="hold">
     <div class="header">
-        <div class="container" style="background-color: #FFFFFF">
-            <img id="logo" style="width: 60px; height: 60px;" th:src="@{/images/logo.jpg}"/>
+        <div class="container">
+            <img id="logo" th:src="@{/images/logo.png}"/>
             <ul class="nav">
                 <li><a th:href="@{/index}">Головна</a></li>
                 <li><a th:href="@{/catalog}">Каталог</a></li>
-                <li><a href="#">Wow</a></li>
-                <li><a href="#">Wow</a></li>
+                <li><a href="#">Акції</a></li>
+                <li><a href="#">Про компанію</a></li>
+                <li><a href="#">Контакти</a></li>
             </ul>
         </div>
     </div>
 </div>
+<nav id="drop-menu" class="drop-bar">
+    <div class="drop-btn">
+        Категорії <span class="fas fa-caret-down"></span>
+    </div>
+    <div class="tooltip"></div>
+    <div class="wrapper">
+        <ul class="menu-bar">
+            <!--            <li>
+                            <a href="#">
+                                <div class="icon">
+                                    <span class="fas fa-glass"></span>
+                                </div>
+                                Home
+                            </a>
+                        </li>-->
 
+<!--            <li class="setting-item">
+                <a href="#cups">
+                    <div class="icon">
+                        <span class="fas fa-cog"></span>
+                    </div>
+                    Чашки <i class="fas fa-angle-right"></i>
+                </a>
+            </li>
+
+            <li class="help-item">
+                <a href="#plates">
+                    <div class="icon">
+                        <span class="fas fa-question-circle"></span>
+                    </div>
+                    Тарілки <i class="fas fa-angle-right"></i>
+                </a>
+            </li>-->
+            <li>
+                <a href="#cups">
+                    <div class="icon">
+                        <span class="fas fa-coffee"></span>
+                    </div>
+                   Чашки
+                </a>
+            </li>
+            <li>
+                <a href="#plates">
+                    <div class="icon">
+                        <span class="fas fa-compact-disc"></span>
+                    </div>
+                    Тарілки
+                </a>
+            <li>
+                <a href="#salads">
+                    <div class="icon">
+                        <span style="transform: rotate(90deg);" class="fas fa-compact-disc"></span>
+                    </div>
+                    Салатники
+                </a>
+            </li>
+            <li>
+                <a href="#sets">
+                    <div class="icon">
+                        <span class="fas fa-toolbox"></span>
+                    </div>
+                    Набори
+                </a>
+            </li>
+            <li>
+                <a href="#other">
+                    <div class="icon">
+                        <span class="fas fa-dice-d6"></span>
+                    </div>
+                    Інше
+                </a>
+            </li>
+        </ul>
+        <!-- Чашки -->
+       <!-- <ul class="setting-drop">
+            <li class="arrow back-setting-btn"><span class="fas fa-arrow-left"></span>Чашки</li>
+            <li>
+                <a href="#cups">
+                    <div class="icon">
+                        <span class="fas fa-user"></span>
+                    </div>
+                    Чашки 1
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="icon">
+                        <span class="fas fa-lock"></span>
+                    </div>
+                    Чашки 2
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="icon">
+                        <span class="fas fa-address-book"></span>
+                    </div>
+                    Чашки 3
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="icon">
+                        <span class="fas fa-globe-asia"></span>
+                    </div>
+                    Чашки 4
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="icon">
+                        <span class="fas fa-sign-out-alt"></span>
+                    </div>
+                    Чашки 5
+                </a>
+            </li>
+        </ul>
+        &lt;!&ndash; Тарілки &ndash;&gt;
+        <ul class="help-drop">
+            <li class="arrow back-help-btn"><span class="fas fa-arrow-left"></span>Тарілки</li>
+            <li>
+                <a href="#">
+                    <div class="icon">
+                        <span class="fas fa-question-circle"></span>
+                    </div>
+                    Тарілки 1
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="icon">
+                        <span class="fas fa-envelope"></span>
+                    </div>
+                    Тарілки 2
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="icon">
+                        <span class="fas fa-comment-alt"></span>
+                    </div>
+                    Тарілки 3
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="icon">
+                        <span class="fas fa-exclamation-circle"></span>
+                    </div>
+                    Тарілки 4
+                </a>
+            </li>
+        </ul>-->
+    </div>
+</nav>
+<div class="section" style="margin-top: 120px;">
+    <a name="cups"></a><br><br>
+    <h1 class="title">Чашки</h1>
+    <div class="container">
+
+        <!-- 1-->
+
+        <div class="col three bg nopad pointer">
+            <div id="app1"><a name=""></a>
+                <div class="card-expansion">
+                    <md-card>
+                        <md-card-media>
+                            <img style="height: 320px;width: 320px;" th:src="@{/images/Chayna250.png}" alt="People">
+                        </md-card-media>
+
+                        <md-card-header>
+                            <div class="md-title">Чашка 250 мл, димна</div>
+                            <div class="md-subhead">"Chayna"</div>
+                        </md-card-header>
+
+                        <md-card-expand>
+                            <md-card-actions md-alignment="space-between">
+                                <div>
+                                    <md-button><i class="fa fa-file-pdf-o" aria-hidden="true"></i> PDF</md-button>
+                                </div>
+
+                                <md-card-expand-trigger>
+                                    <md-button style="border: 1px solid black; ">Опис</md-button>
+                                </md-card-expand-trigger>
+                            </md-card-actions>
+
+                            <md-card-expand-content>
+                                <md-card-content>
+                                    //
+                                </md-card-content>
+                            </md-card-expand-content>
+                        </md-card-expand>
+                    </md-card>
+                </div>
+            </div>
+        </div>
+        <div class="col three bg nopad pointer">
+            <div id="app2"><a name=""></a>
+                <div class="card-expansion">
+                    <md-card>
+                        <md-card-media>
+                            <img style="height: 320px;width: 320px;" th:src="@{/images/Chayna300.png}" alt="People">
+                        </md-card-media>
+
+                        <md-card-header>
+                            <div class="md-title">Чашка 300 мл, димна</div>
+                            <div class="md-subhead">"Chayna XL"</div>
+                        </md-card-header>
+
+                        <md-card-expand>
+                            <md-card-actions md-alignment="space-between">
+                                <div>
+                                    <md-button><i class="fa fa-file-pdf-o" aria-hidden="true"></i> PDF</md-button>
+                                </div>
+
+                                <md-card-expand-trigger>
+                                    <md-button style="border: 1px solid black; ">Опис</md-button>
+                                </md-card-expand-trigger>
+                            </md-card-actions>
+
+                            <md-card-expand-content>
+                                <md-card-content>
+                                    //
+                                </md-card-content>
+                            </md-card-expand-content>
+                        </md-card-expand>
+                    </md-card>
+                </div>
+            </div>
+        </div>
+        <div class="col three bg nopad pointer">
+            <div id="app3"><a name=""></a>
+                <div class="card-expansion">
+                    <md-card>
+                        <md-card-media>
+                            <img th:src="@{/images/Bell300.png}" alt="People">
+                        </md-card-media>
+
+                        <md-card-header>
+                            <div class="md-title">Чашка 300 мл, димна</div>
+                            <div class="md-subhead">"Bell"</div>
+                        </md-card-header>
+
+                        <md-card-expand>
+                            <md-card-actions md-alignment="space-between">
+                                <div>
+                                    <md-button><i class="fa fa-file-pdf-o" aria-hidden="true"></i> PDF</md-button>
+                                </div>
+
+                                <md-card-expand-trigger>
+                                    <md-button style="border: 1px solid black; ">Опис</md-button>
+                                </md-card-expand-trigger>
+                            </md-card-actions>
+
+                            <md-card-expand-content>
+                                <md-card-content>
+                                    //
+                                </md-card-content>
+                            </md-card-expand-content>
+                        </md-card-expand>
+                    </md-card>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2-->
+
+        <div class="col three bg nopad pointer">
+            <div id="app4"><a name=""></a>
+                <div class="card-expansion">
+                    <md-card>
+                        <md-card-media>
+                            <img style="height: 320px;width: 320px;" th:src="@{/images/Quadra220.png}" alt="People">
+                        </md-card-media>
+
+                        <md-card-header>
+                            <div class="md-title">Чашка КВ 220 мл, димна</div>
+                            <div class="md-subhead">"Quadra"</div>
+                        </md-card-header>
+
+                        <md-card-expand>
+                            <md-card-actions md-alignment="space-between">
+                                <div>
+                                    <md-button><i class="fa fa-file-pdf-o" aria-hidden="true"></i> PDF</md-button>
+                                </div>
+
+                                <md-card-expand-trigger>
+                                    <md-button style="border: 1px solid black; ">Опис</md-button>
+                                </md-card-expand-trigger>
+                            </md-card-actions>
+
+                            <md-card-expand-content>
+                                <md-card-content>
+                                    //
+                                </md-card-content>
+                            </md-card-expand-content>
+                        </md-card-expand>
+                    </md-card>
+                </div>
+            </div>
+        </div>
+        <div class="col three bg nopad pointer">
+            <div id="app5"><a name=""></a>
+                <div class="card-expansion">
+                    <md-card>
+                        <md-card-media>
+                            <img style="height: 320px;width: 320px;" th:src="@{/images/Quadra310.png}" alt="People">
+                        </md-card-media>
+
+                        <md-card-header>
+                            <div class="md-title">Чашка КВ 310 мл, димна</div>
+                            <div class="md-subhead">"Quadra XL"</div>
+                        </md-card-header>
+
+                        <md-card-expand>
+                            <md-card-actions md-alignment="space-between">
+                                <div>
+                                    <md-button><i class="fa fa-file-pdf-o" aria-hidden="true"></i> PDF</md-button>
+                                </div>
+
+                                <md-card-expand-trigger>
+                                    <md-button style="border: 1px solid black; ">Опис</md-button>
+                                </md-card-expand-trigger>
+                            </md-card-actions>
+
+                            <md-card-expand-content>
+                                <md-card-content>
+                                    //
+                                </md-card-content>
+                            </md-card-expand-content>
+                        </md-card-expand>
+                    </md-card>
+                </div>
+            </div>
+        </div>
+        <div class="col three bg nopad pointer">
+            <div id="app6"><a name=""></a>
+                <div class="card-expansion">
+                    <md-card>
+                        <md-card-media>
+                            <img th:src="@{/images/Orzo400.png}" alt="People">
+                        </md-card-media>
+
+                        <md-card-header>
+                            <div class="md-title">Чашка 400 мл, димна</div>
+                            <div class="md-subhead">"Orzo"</div>
+                        </md-card-header>
+                        <md-card-expand>
+                            <md-card-actions md-alignment="space-between">
+                                <div>
+                                    <md-button><i class="fa fa-file-pdf-o" aria-hidden="true"></i> PDF</md-button>
+                                </div>
+
+                                <md-card-expand-trigger>
+                                    <md-button style="border: 1px solid black; ">Опис</md-button>
+                                </md-card-expand-trigger>
+                            </md-card-actions>
+
+                            <md-card-expand-content>
+                                <md-card-content>
+                                    //
+                                </md-card-content>
+                            </md-card-expand-content>
+                        </md-card-expand>
+                    </md-card>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3-->
+
+        <div class="col three bg nopad pointer">
+            <div id="app7"><a name=""></a>
+                <div class="card-expansion">
+                    <md-card>
+                        <md-card-media>
+                            <img th:src="@{/images/White330.png}" alt="People">
+                        </md-card-media>
+
+                        <md-card-header>
+                            <div class="md-title">Чашка 330 мл, димна</div>
+                            <div class="md-subhead">"White Coffee"</div>
+                        </md-card-header>
+
+                        <md-card-expand>
+                            <md-card-actions md-alignment="space-between">
+                                <div>
+                                    <md-button><i class="fa fa-file-pdf-o" aria-hidden="true"></i> PDF</md-button>
+                                </div>
+
+                                <md-card-expand-trigger>
+                                    <md-button style="border: 1px solid black; ">Опис</md-button>
+                                </md-card-expand-trigger>
+                            </md-card-actions>
+
+                            <md-card-expand-content>
+                                <md-card-content>
+                                    //
+                                </md-card-content>
+                            </md-card-expand-content>
+                        </md-card-expand>
+                    </md-card>
+                </div>
+            </div>
+        </div>
+        <div class="col three bg nopad pointer">
+            <div id="app8"><a name=""></a>
+                <div class="card-expansion">
+                    <md-card>
+                        <md-card-media>
+                            <img th:src="@{/images/Herbata320.png}" alt="People">
+                        </md-card-media>
+
+                        <md-card-header>
+                            <div class="md-title">Чашка 320 мл, димна</div>
+                            <div class="md-subhead">"Herbata"</div>
+                        </md-card-header>
+
+                        <md-card-expand>
+                            <md-card-actions md-alignment="space-between">
+                                <div>
+                                    <md-button><i class="fa fa-file-pdf-o" aria-hidden="true"></i> PDF</md-button>
+                                </div>
+
+                                <md-card-expand-trigger>
+                                    <md-button style="border: 1px solid black; ">Опис</md-button>
+                                </md-card-expand-trigger>
+                            </md-card-actions>
+
+                            <md-card-expand-content>
+                                <md-card-content>
+                                    //
+                                </md-card-content>
+                            </md-card-expand-content>
+                        </md-card-expand>
+                    </md-card>
+                </div>
+            </div>
+        </div>
+        <div class="col three bg nopad pointer">
+            <div id="app9"><a name=""></a>
+                <div class="card-expansion">
+                    <md-card>
+                        <md-card-media>
+                            <img th:src="@{/images/Herbata400.png}" alt="People">
+                        </md-card-media>
+
+                        <md-card-header>
+                            <div class="md-title">Чашка 400 мл, димна</div>
+                            <div class="md-subhead">"Herbata XL"</div>
+                        </md-card-header>
+
+                        <md-card-expand>
+                            <md-card-actions md-alignment="space-between">
+                                <div>
+                                    <md-button><i class="fa fa-file-pdf-o" aria-hidden="true"></i> PDF</md-button>
+                                </div>
+
+                                <md-card-expand-trigger>
+                                    <md-button style="border: 1px solid black; ">Опис</md-button>
+                                </md-card-expand-trigger>
+                            </md-card-actions>
+
+                            <md-card-expand-content>
+                                <md-card-content>
+                                    //
+                                </md-card-content>
+                            </md-card-expand-content>
+                        </md-card-expand>
+                    </md-card>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 4-->
+
+        <!--<div class="col three bg nopad pointer">
+            <div id="app10"><a name=""></a>
+                <div class="card-expansion">
+                    <md-card>
+                        <md-card-media>
+                            <img th:src="@{/images/Adore280.png}" alt="People">
+                        </md-card-media>
+
+                        <md-card-header>
+                            <div class="md-title">Чашка 280 мл, димна</div>
+                            <div class="md-subhead">"Adore"</div>
+                        </md-card-header>
+
+                        <md-card-expand>
+                            <md-card-actions md-alignment="space-between">
+                                <div>
+                                    <md-button><i class="fa fa-file-pdf-o" aria-hidden="true"></i> PDF</md-button>
+                                </div>
+
+                                <md-card-expand-trigger>
+                                    <md-button style="border: 1px solid black; ">Опис</md-button>
+                                </md-card-expand-trigger>
+                            </md-card-actions>
+
+                            <md-card-expand-content>
+                                <md-card-content>
+                                    //
+                                </md-card-content>
+                            </md-card-expand-content>
+                        </md-card-expand>
+                    </md-card>
+                </div>
+            </div>
+        </div>-->
+        <div class="col three bg nopad pointer">
+            <div id="app11"><a name=""></a>
+                <div class="card-expansion">
+                    <md-card>
+                        <md-card-media>
+                            <img th:src="@{/images/Grecia280.png}" alt="People">
+                        </md-card-media>
+
+                        <md-card-header>
+                            <div class="md-title">Чашка 280 мл, димна</div>
+                            <div class="md-subhead">"Grecia"</div>
+                        </md-card-header>
+
+                        <md-card-expand>
+                            <md-card-actions md-alignment="space-between">
+                                <div>
+                                    <md-button><i class="fa fa-file-pdf-o" aria-hidden="true"></i> PDF</md-button>
+                                </div>
+
+                                <md-card-expand-trigger>
+                                    <md-button style="border: 1px solid black; ">Опис</md-button>
+                                </md-card-expand-trigger>
+                            </md-card-actions>
+
+                            <md-card-expand-content>
+                                <md-card-content>
+                                    //
+                                </md-card-content>
+                            </md-card-expand-content>
+                        </md-card-expand>
+                    </md-card>
+                </div>
+            </div>
+        </div>
+        <div class="col three bg nopad pointer">
+            <div id="app12"><a name=""></a>
+                <div class="card-expansion">
+                    <md-card>
+                        <md-card-media>
+                            <img th:src="@{/images/Black220.png}" alt="People">
+                        </md-card-media>
+
+                        <md-card-header>
+                            <div class="md-title">Чашка 220 мл, димна</div>
+                            <div class="md-subhead">"Black coffee"</div>
+                        </md-card-header>
+
+                        <md-card-expand>
+                            <md-card-actions md-alignment="space-between">
+                                <div>
+                                    <md-button><i class="fa fa-file-pdf-o" aria-hidden="true"></i> PDF</md-button>
+                                </div>
+
+                                <md-card-expand-trigger>
+                                    <md-button style="border: 1px solid black; ">Опис</md-button>
+                                </md-card-expand-trigger>
+                            </md-card-actions>
+
+                            <md-card-expand-content>
+                                <md-card-content>
+                                    //
+                                </md-card-content>
+                            </md-card-expand-content>
+                        </md-card-expand>
+                    </md-card>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5-->
+
+        <div class="col three bg nopad pointer">
+            <div id="app13"><a name=""></a>
+                <div class="card-expansion">
+                    <md-card>
+                        <md-card-media>
+                            <img th:src="@{/images/250.png}" alt="People">
+                        </md-card-media>
+
+                        <md-card-header>
+                            <div class="md-title">Чашка 250 мл, димна</div>
+                            <div class="md-subhead">""</div>
+                        </md-card-header>
+
+                        <md-card-expand>
+                            <md-card-actions md-alignment="space-between">
+                                <div>
+                                    <md-button><i class="fa fa-file-pdf-o" aria-hidden="true"></i> PDF</md-button>
+                                </div>
+
+                                <md-card-expand-trigger>
+                                    <md-button style="border: 1px solid black; ">Опис</md-button>
+                                </md-card-expand-trigger>
+                            </md-card-actions>
+
+                            <md-card-expand-content>
+                                <md-card-content>
+                                    //
+                                </md-card-content>
+                            </md-card-expand-content>
+                        </md-card-expand>
+                    </md-card>
+                </div>
+            </div>
+        </div>
+        <!--<div class="col three bg nopad pointer">
+            <div id="app14"><a name=""></a>
+                <div class="card-expansion">
+                    <md-card>
+                        <md-card-media>
+                            <img th:src="@{/images/400.png}" alt="People">
+                        </md-card-media>
+
+                        <md-card-header>
+                            <div class="md-title">Чашка 400 мл, димна</div>
+                            <div class="md-subhead">""</div>
+                        </md-card-header>
+
+                        <md-card-expand>
+                            <md-card-actions md-alignment="space-between">
+                                <div>
+                                    <md-button><i class="fa fa-file-pdf-o" aria-hidden="true"></i> PDF</md-button>
+                                </div>
+
+                                <md-card-expand-trigger>
+                                    <md-button style="border: 1px solid black; ">Опис</md-button>
+                                </md-card-expand-trigger>
+                            </md-card-actions>
+
+                            <md-card-expand-content>
+                                <md-card-content>
+                                    //
+                                </md-card-content>
+                            </md-card-expand-content>
+                        </md-card-expand>
+                    </md-card>
+                </div>
+            </div>
+        </div>-->
+        <div class="col three bg nopad pointer">
+            <div id="app15"><a name=""></a>
+                <div class="card-expansion">
+                    <md-card>
+                        <md-card-media>
+                            <img th:src="@{/images/500.png}" alt="People">
+                        </md-card-media>
+
+                        <md-card-header>
+                            <div class="md-title">Чашка 500 мл, димна</div>
+                            <div class="md-subhead">""</div>
+                        </md-card-header>
+
+                        <md-card-expand>
+                            <md-card-actions md-alignment="space-between">
+                                <div>
+                                    <md-button><i class="fa fa-file-pdf-o" aria-hidden="true"></i> PDF</md-button>
+                                </div>
+
+                                <md-card-expand-trigger>
+                                    <md-button style="border: 1px solid black; ">Опис</md-button>
+                                </md-card-expand-trigger>
+                            </md-card-actions>
+
+                            <md-card-expand-content>
+                                <md-card-content>
+                                    //
+                                </md-card-content>
+                            </md-card-expand-content>
+                        </md-card-expand>
+                    </md-card>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6-->
+
+        <div class="col three bg nopad pointer">
+            <div id="app16"><a name=""></a>
+                <div class="card-expansion">
+                    <md-card>
+                        <md-card-media>
+                            <img th:src="@{/images/Boss500.png}" alt="People">
+                        </md-card-media>
+
+                        <md-card-header>
+                            <div class="md-title">Чашка 500 мл, димна</div>
+                            <div class="md-subhead">"Boss"</div>
+                        </md-card-header>
+
+                        <md-card-expand>
+                            <md-card-actions md-alignment="space-between">
+                                <div>
+                                    <md-button><i class="fa fa-file-pdf-o" aria-hidden="true"></i> PDF</md-button>
+                                </div>
+
+                                <md-card-expand-trigger>
+                                    <md-button style="border: 1px solid black; ">Опис</md-button>
+                                </md-card-expand-trigger>
+                            </md-card-actions>
+
+                            <md-card-expand-content>
+                                <md-card-content>
+                                    //
+                                </md-card-content>
+                            </md-card-expand-content>
+                        </md-card-expand>
+                    </md-card>
+                </div>
+            </div>
+        </div>
+        <div class="col three bg nopad pointer">
+            <div id="app17"><a name=""></a>
+                <div class="card-expansion">
+                    <md-card>
+                        <md-card-media>
+                            <img th:src="@{/images/Boss720.png}" alt="People">
+                        </md-card-media>
+
+                        <md-card-header>
+                            <div class="md-title">Чашка 720 мл, димна</div>
+                            <div class="md-subhead">"Big boss"</div>
+                        </md-card-header>
+
+                        <md-card-expand>
+                            <md-card-actions md-alignment="space-between">
+                                <div>
+                                    <md-button><i class="fa fa-file-pdf-o" aria-hidden="true"></i> PDF</md-button>
+                                </div>
+
+                                <md-card-expand-trigger>
+                                    <md-button style="border: 1px solid black; ">Опис</md-button>
+                                </md-card-expand-trigger>
+                            </md-card-actions>
+
+                            <md-card-expand-content>
+                                <md-card-content>
+                                    //
+                                </md-card-content>
+                            </md-card-expand-content>
+                        </md-card-expand>
+                    </md-card>
+                </div>
+            </div>
+        </div>
+        <!--        <div class="col three bg nopad pointer">
+                    <div id="app18"><a name=""></a>
+                        <div class="card-expansion">
+                            <md-card>
+                                <md-card-media>
+                                    <img th:src="@{/images/Black220.png}" alt="People">
+                                </md-card-media>
+
+                                <md-card-header>
+                                    <div class="md-title">Чашка 220 мл, димна</div>
+                                    <div class="md-subhead">"Black coffee"</div>
+                                </md-card-header>
+
+                                <md-card-expand>
+                                    <md-card-actions md-alignment="space-between">
+                                        <div>
+                                            <md-button><i class="fa fa-file-pdf-o" aria-hidden="true"></i> PDF</md-button>
+                                        </div>
+
+                                        <md-card-expand-trigger>
+                                            <md-button style="border: 1px solid black; ">Опис</md-button>
+                                        </md-card-expand-trigger>
+                                    </md-card-actions>
+
+                                    <md-card-expand-content>
+                                        <md-card-content>
+                                            //
+                                        </md-card-content>
+                                    </md-card-expand-content>
+                                </md-card-expand>
+                            </md-card>
+                        </div>
+                    </div>
+                </div>-->
+
+    </div>
+    <a name="plates"></a>
+    <br>
+    <br>
+    <h1 class="title">Тарілки</h1>
+    <div class="container">
+
+        <!-- 7-->
+
+        <div class="col three bg nopad pointer">
+            <div id="app18"><a name=""></a>
+                <div class="card-expansion">
+                    <md-card>
+                        <md-card-media>
+                            <img th:src="@{/images/Borsh350.png}" alt="People">
+                        </md-card-media>
+
+                        <md-card-header>
+                            <div class="md-title">Борщівниця 350 мл</div>
+                            <div class="md-subhead">""</div>
+                        </md-card-header>
+
+                        <md-card-expand>
+                            <md-card-actions md-alignment="space-between">
+                                <div>
+                                    <md-button><i class="fa fa-file-pdf-o" aria-hidden="true"></i> PDF</md-button>
+                                </div>
+
+                                <md-card-expand-trigger>
+                                    <md-button style="border: 1px solid black; ">Опис</md-button>
+                                </md-card-expand-trigger>
+                            </md-card-actions>
+
+                            <md-card-expand-content>
+                                <md-card-content>
+                                    //
+                                </md-card-content>
+                            </md-card-expand-content>
+                        </md-card-expand>
+                    </md-card>
+                </div>
+            </div>
+        </div>
+        <div class="col three bg nopad pointer">
+            <div id="app19"><a name=""></a>
+                <div class="card-expansion">
+                    <md-card>
+                        <md-card-media>
+                            <img th:src="@{/images/Borsh500.png}" alt="People">
+                        </md-card-media>
+
+                        <md-card-header>
+                            <div class="md-title">Борщівниця 500 мл</div>
+                            <div class="md-subhead">""</div>
+                        </md-card-header>
+
+                        <md-card-expand>
+                            <md-card-actions md-alignment="space-between">
+                                <div>
+                                    <md-button><i class="fa fa-file-pdf-o" aria-hidden="true"></i> PDF</md-button>
+                                </div>
+
+                                <md-card-expand-trigger>
+                                    <md-button style="border: 1px solid black; ">Опис</md-button>
+                                </md-card-expand-trigger>
+                            </md-card-actions>
+
+                            <md-card-expand-content>
+                                <md-card-content>
+                                    //
+                                </md-card-content>
+                            </md-card-expand-content>
+                        </md-card-expand>
+                    </md-card>
+                </div>
+            </div>
+        </div>
+        <div class="col three bg nopad pointer">
+            <div id="app20"><a name=""></a>
+                <div class="card-expansion">
+                    <md-card>
+                        <md-card-media>
+                            <img style="transform: rotate(90deg);" th:src="@{/images/Plate.png}" alt="People">
+                        </md-card-media>
+
+                        <md-card-header>
+                            <div class="md-title">Тарілка КВ 14 см, димна</div>
+                            <div class="md-subhead">""</div>
+                        </md-card-header>
+
+                        <md-card-expand>
+                            <md-card-actions md-alignment="space-between">
+                                <div>
+                                    <md-button><i class="fa fa-file-pdf-o" aria-hidden="true"></i> PDF</md-button>
+                                </div>
+
+                                <md-card-expand-trigger>
+                                    <md-button style="border: 1px solid black; ">Опис</md-button>
+                                </md-card-expand-trigger>
+                            </md-card-actions>
+
+                            <md-card-expand-content>
+                                <md-card-content>
+                                    //
+                                </md-card-content>
+                            </md-card-expand-content>
+                        </md-card-expand>
+                    </md-card>
+                </div>
+            </div>
+        </div>
+        <div class="col three bg nopad pointer">
+            <div id="app24"><a name=""></a>
+                <div class="card-expansion">
+                    <md-card>
+                        <md-card-media>
+                            <img style="transform: rotate(90deg);" th:src="@{/images/PlateRound.png}" alt="People">
+                        </md-card-media>
+
+                        <md-card-header>
+                            <div class="md-title">Тарілка 14 см, димна</div>
+                            <div class="md-subhead">""</div>
+                        </md-card-header>
+
+                        <md-card-expand>
+                            <md-card-actions md-alignment="space-between">
+                                <div>
+                                    <md-button><i class="fa fa-file-pdf-o" aria-hidden="true"></i> PDF</md-button>
+                                </div>
+
+                                <md-card-expand-trigger>
+                                    <md-button style="border: 1px solid black; ">Опис</md-button>
+                                </md-card-expand-trigger>
+                            </md-card-actions>
+
+                            <md-card-expand-content>
+                                <md-card-content>
+                                    //
+                                </md-card-content>
+                            </md-card-expand-content>
+                        </md-card-expand>
+                    </md-card>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<a name="salads"></a>
+<br>
+<br>
+<h1 class="title">Салатники</h1>
+<div class="container">
+
+    <!-- 8-->
+
+    <div class="col three bg nopad pointer">
+        <div id="app21"><a name=""></a>
+            <div class="card-expansion">
+                <md-card>
+                    <md-card-media>
+                        <img th:src="@{/images/Piccolo12.png}" alt="People">
+                    </md-card-media>
+
+                    <md-card-header>
+                        <div class="md-title">Салатник 12 см, димний</div>
+                        <div class="md-subhead">"Piccolo"</div>
+                    </md-card-header>
+
+                    <md-card-expand>
+                        <md-card-actions md-alignment="space-between">
+                            <div>
+                                <md-button><i class="fa fa-file-pdf-o" aria-hidden="true"></i> PDF</md-button>
+                            </div>
+
+                            <md-card-expand-trigger>
+                                <md-button style="border: 1px solid black; ">Опис</md-button>
+                            </md-card-expand-trigger>
+                        </md-card-actions>
+
+                        <md-card-expand-content>
+                            <md-card-content>
+                                //
+                            </md-card-content>
+                        </md-card-expand-content>
+                    </md-card-expand>
+                </md-card>
+            </div>
+        </div>
+    </div>
+    <div class="col three bg nopad pointer">
+        <div id="app22"><a name=""></a>
+            <div class="card-expansion">
+                <md-card>
+                    <md-card-media>
+                        <img th:src="@{/images/Salad13.png}" alt="People">
+                    </md-card-media>
+
+                    <md-card-header>
+                        <div class="md-title">Салатник 13 см, димний</div>
+                        <div class="md-subhead">""</div>
+                    </md-card-header>
+
+                    <md-card-expand>
+                        <md-card-actions md-alignment="space-between">
+                            <div>
+                                <md-button><i class="fa fa-file-pdf-o" aria-hidden="true"></i> PDF</md-button>
+                            </div>
+
+                            <md-card-expand-trigger>
+                                <md-button style="border: 1px solid black; ">Опис</md-button>
+                            </md-card-expand-trigger>
+                        </md-card-actions>
+
+                        <md-card-expand-content>
+                            <md-card-content>
+                                //
+                            </md-card-content>
+                        </md-card-expand-content>
+                    </md-card-expand>
+                </md-card>
+            </div>
+        </div>
+    </div>
+    <div class="col three bg nopad pointer">
+        <div id="app23"><a name=""></a>
+            <div class="card-expansion">
+                <md-card>
+                    <md-card-media>
+                        <img th:src="@{/images/Medio15.png}" alt="People">
+                    </md-card-media>
+
+                    <md-card-header>
+                        <div class="md-title">Салатник 15 см, димний</div>
+                        <div class="md-subhead">"Medio"</div>
+                    </md-card-header>
+
+                    <md-card-expand>
+                        <md-card-actions md-alignment="space-between">
+                            <div>
+                                <md-button><i class="fa fa-file-pdf-o" aria-hidden="true"></i> PDF</md-button>
+                            </div>
+
+                            <md-card-expand-trigger>
+                                <md-button style="border: 1px solid black; ">Опис</md-button>
+                            </md-card-expand-trigger>
+                        </md-card-actions>
+
+                        <md-card-expand-content>
+                            <md-card-content>
+                                //
+                            </md-card-content>
+                        </md-card-expand-content>
+                    </md-card-expand>
+                </md-card>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+    <a name="sets"></a>
+    <br>
+    <br>
+    <h1 class="title">Набори</h1>
+    <div class="container">
+    </div>
+
+
+    <a name="other"></a>
+    <br>
+    <br>
+    <h1 class="title">Інше</h1>
+    <div class="container">
+        <div class="col three bg nopad pointer">
+            <div id="app26"><a name=""></a>
+                <div class="card-expansion">
+                    <md-card>
+                        <md-card-media>
+                            <img th:src="@{/images/Pepel.png}" alt="People">
+                        </md-card-media>
+
+                        <md-card-header>
+                            <div class="md-title">Попільничка 10.5 см, димна</div>
+                            <div class="md-subhead">""</div>
+                        </md-card-header>
+
+                        <md-card-expand>
+                            <md-card-actions md-alignment="space-between">
+                                <div>
+                                    <md-button><i class="fa fa-file-pdf-o" aria-hidden="true"></i> PDF</md-button>
+                                </div>
+
+                                <md-card-expand-trigger>
+                                    <md-button style="border: 1px solid black; ">Опис</md-button>
+                                </md-card-expand-trigger>
+                            </md-card-actions>
+
+                            <md-card-expand-content>
+                                <md-card-content>
+                                    //
+                                </md-card-content>
+                            </md-card-expand-content>
+                        </md-card-expand>
+                    </md-card>
+                </div>
+            </div>
+        </div>
+</div>
+</div>
+<br>
+<br>
+<br>
+<br>
 </body>
+<script>
+    "use strict"
+
+    Vue.use(VueMaterial.default)
+
+    var example = {
+        name: "CardExpansion"
+    }
+
+    var app1 = (new Vue(example)).$mount("#app1")
+    var app2 = (new Vue(example)).$mount("#app2")
+    var app3 = (new Vue(example)).$mount("#app3")
+    var app4 = (new Vue(example)).$mount("#app4")
+    var app5 = (new Vue(example)).$mount("#app5")
+    var app6 = (new Vue(example)).$mount("#app6")
+    var app7 = (new Vue(example)).$mount("#app7")
+    var app8 = (new Vue(example)).$mount("#app8")
+    var app9 = (new Vue(example)).$mount("#app9")
+    var app10 = (new Vue(example)).$mount("#app10")
+    var app11 = (new Vue(example)).$mount("#app11")
+    var app12 = (new Vue(example)).$mount("#app12")
+    var app13 = (new Vue(example)).$mount("#app13")
+    var app14 = (new Vue(example)).$mount("#app14")
+    var app15 = (new Vue(example)).$mount("#app15")
+    var app16 = (new Vue(example)).$mount("#app16")
+    var app17 = (new Vue(example)).$mount("#app17")
+    var app18 = (new Vue(example)).$mount("#app18")
+    var app19 = (new Vue(example)).$mount("#app19")
+    var app20 = (new Vue(example)).$mount("#app20")
+    var app21 = (new Vue(example)).$mount("#app21")
+    var app22 = (new Vue(example)).$mount("#app22")
+    var app23 = (new Vue(example)).$mount("#app23")
+    var app24 = (new Vue(example)).$mount("#app24")
+    var app25 = (new Vue(example)).$mount("#app25")
+    var app26 = (new Vue(example)).$mount("#app26")
+/*    app2.$mount("#app2")
+    app3.$mount("#app3")
+    app4.$mount("#app4")
+    app5.$mount("#app5")
+    app6.$mount("#app6")
+    app7.$mount("#app7")
+    app8.$mount("#app8")
+    app9.$mount("#app9")
+    app10.$mount("#app10")
+    app11.$mount("#app11")
+    app12.$mount("#app12")
+    app13.$mount("#app13")
+    app14.$mount("#app14")
+    app15.$mount("#app15")
+    app15.$mount("#app15")
+    app16.$mount("#app16")
+    app17.$mount("#app17")
+    app18.$mount("#app18")
+    app19.$mount("#app19")
+    app20.$mount("#app20")
+    app21.$mount("#app21")
+    app22.$mount("#app22")
+    app23.$mount("#app23")
+    app24.$mount("#app24")
+    app25.$mount("#app25")
+    app26.$mount("#app26")*/
+
+    var header = $('.drop-bar'),
+        scrollPrev = 0;
+
+    $(window).scroll(function () {
+        var scrolled = $(window).scrollTop();
+
+        if (scrolled > 100 && scrolled > scrollPrev) {
+            header.addClass('out');
+        } else {
+            header.removeClass('out');
+        }
+        scrollPrev = scrolled;
+    });
+    const drop_btn = document.querySelector(".drop-btn span");
+    const tooltip = document.querySelector(".tooltip");
+    const menu_wrapper = document.querySelector(".wrapper");
+    const menu_bar = document.querySelector(".menu-bar");
+    const setting_drop = document.querySelector(".setting-drop");
+    const help_drop = document.querySelector(".help-drop");
+    const setting_item = document.querySelector(".setting-item");
+    const help_item = document.querySelector(".help-item");
+    const setting_btn = document.querySelector(".back-setting-btn");
+    const help_btn = document.querySelector(".back-help-btn");
+    drop_btn.onclick = (() => {
+        menu_wrapper.classList.toggle("show");
+        tooltip.classList.toggle("show");
+    });
+    setting_item.onclick = (() => {
+        menu_bar.style.marginLeft = "-400px";
+        setTimeout(() => {
+            setting_drop.style.display = "block";
+        }, 100);
+    });
+    help_item.onclick = (() => {
+        menu_bar.style.marginLeft = "-400px";
+        setTimeout(() => {
+            help_drop.style.display = "block";
+        }, 100);
+    });
+    setting_btn.onclick = (() => {
+        menu_bar.style.marginLeft = "0px";
+        setting_drop.style.display = "none";
+    });
+    help_btn.onclick = (() => {
+        help_drop.style.display = "none";
+        menu_bar.style.marginLeft = "0px";
+    });
+</script>
+<script th:src="@{/scripts/script.js}"></script>
 </html>

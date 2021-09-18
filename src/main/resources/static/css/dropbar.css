@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+* {
+
+    text-decoration: none;
+!important;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+.col.three.bg.nopad.pointer{
+    background: #f7f7f7;
+}
+.title{
+    font-weight: 400;
+    font-size: 22px;
+    content: "";
+    width: 300px;
+    position: relative;
+    border-bottom: 1px solid #aaa;
+    text-align: center;
+    margin: auto;
+    margin-top: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+a {
+    text-decoration: none;
+!important;
+}
+img{
+    height: 320px;
+    width: 320px;
+}
+.section {
+    background: #f7f7f7;
+    margin-top: 10%;
+!important;
+    width: 100%;
+}
+
+.drop-bar {
+    padding-top: 40px;
+    z-index: 99;
+    margin-top: -6.5%;
+    transition: all .5s ease;
+    color: black;
+    position: fixed;
+}
+
+.drop-bar.out {
+    transform: translateY(-2000%);
+}
+
+.section {
+    margin-top: 5%;
+!important;
+}
+
+nav {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+nav .drop-btn {
+    width: 400px;
+    background: #aaa;
+    border-radius: 5px;
+    line-height: 55px;
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+    padding: 0 20px;
+}
+
+nav .drop-btn span {
+    float: right;
+    line-height: 50px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+nav .tooltip {
+    position: absolute;
+    right: 20px;
+    bottom: -20px;
+    height: 15px;
+    width: 15px;
+    background: #aaa;;
+    transform: rotate(45deg);
+    display: none;
+}
+
+nav .tooltip.show {
+    display: block;
+}
+
+nav .wrapper {
+    margin-top: 12px;
+    position: absolute;
+    top: 65px;
+    display: flex;
+    width: 400px;
+    overflow: hidden;
+    border-radius: 5px;
+    background: #aaa;
+    display: none;
+    transition: all 0.3s ease;
+}
+
+nav .wrapper.show {
+    display: block;
+    display: flex;
+}
+
+.wrapper ul {
+    width: 400px;
+    list-style: none;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.wrapper ul li {
+    line-height: 55px;
+}
+
+.wrapper ul li a {
+    position: relative;
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 0 10px;
+    display: flex;
+    border-radius: 8px;
+    align-items: center;
+    text-decoration: none;
+}
+
+.wrapper ul li:hover a {
+    background: #3A3B3C;
+}
+
+ul li a .icon {
+    height: 40px;
+    width: 40px;
+    margin-right: 13px;
+    background: #ffffff1a;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border-radius: 50%;
+}
+
+ul li a .icon span {
+    line-height: 40px;
+    font-size: 20px;
+    color: black;
+}
+
+ul li a i {
+    position: absolute;
+    right: 10px;
+    font-size: 25px;
+    pointer-events: none;
+}
+
+.wrapper ul.setting-drop,
+.wrapper ul.help-drop {
+    display: none;
+}
+
+.wrapper .arrow {
+    padding-left: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+    cursor: pointer;
+}
+
+.wrapper .arrow span {
+    margin-right: 15px;
+}
